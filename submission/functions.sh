@@ -116,3 +116,36 @@ trim() {
   var="${var%"${var##*[![:space:]]}"}"
   printf '%s' "$var"
 }
+
+
+get_blockchain_info() {
+  echo "Blockchain Info"
+  bitcoin-cli -regtest getblockchaininfo
+}
+
+get_mining_info() {
+  echo "Mining Info"
+  bitcoin-cli -regtest getmininginfo
+}
+
+get_network_info() {
+  echo "Network Info"
+  bitcoin-cli -regtest getnetworkinfo
+}
+
+get_network_totals() {
+  echo "Network Totals"
+  bitcoin-cli -regtest getnettotals
+}
+
+get_wallet_info() {
+  echo "Wallet Info"
+  bitcoin-cli -regtest getwalletinfo
+}
+
+create_wallet() {
+  echo "Creating Wallet"
+  bitcoin_wallet=$(bitcoin-cli -named createwallet wallet_name="adtrex_wallet" descriptors=false)
+  echo "Wallet Info: $(echo $bitcoin_wallet)" 
+}
+
