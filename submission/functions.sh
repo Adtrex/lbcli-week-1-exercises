@@ -12,7 +12,7 @@
   bitcoin-cli -regtest getnettotals
 
   echo "Creating Wallet"
-  bitcoin_wallet=$(bitcoin-cli -named createwallet wallet_name="adtrex_wallet" descriptors=false)
+  bitcoin_wallet=$(bitcoin-cli -regtest -named createwallet wallet_name="adtrex_wallet" descriptors=false)
   echo "Wallet Info: $(echo $bitcoin_wallet)" 
 
   echo "Wallet Info"
