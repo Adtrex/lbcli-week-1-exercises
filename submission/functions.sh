@@ -16,4 +16,4 @@
   echo "Wallet Info: $(echo $bitcoin_wallet)" 
 
   echo "Wallet Info"
-  bitcoin-cli -regtest getwalletinfo
+  bitcoin-cli -regtest getwalletinfo 
